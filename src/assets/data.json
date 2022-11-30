@@ -1,0 +1,98 @@
+[
+    {
+        "name": "Autmn Skullcap",
+        "edible": "false",
+        "shape": "flat",
+        "color": ["Brown", "Orange"],
+        "cost": 0,
+        "description": "..."
+    },
+    {
+        "name": "Chanterelles",
+        "edible": "true",
+        "shape": "vase",
+        "color": ["Orange", "Yellow", "White"],
+        "cost": 20,
+        "description": "..."
+    },
+    {
+        "name": "Chicken of the Woods",
+        "edible": "true",
+        "shape": "shelf",
+        "color": ["Orange", "Yellow"],
+        "cost": 20,
+        "description": "..."
+    },
+    {
+        "name": "Death Caps",
+        "edible": "false",
+        "shape": "flat",
+        "color": ["Yellow","White"],
+        "cost": 0,
+        "description": "..."
+    },
+    {
+        "name": "Destroying Angel",
+        "edible": "false",
+        "shape": "convex",
+        "color": ["White"],
+        "cost": 0,
+        "description": "..."
+    },
+    {
+        "name": "Fly Agaric",
+        "edible": "false",
+        "shape": "convex",
+        "color": ["Red", "Orange"],
+        "cost": 0,
+        "description": "..."
+    },
+    {
+        "name": "Hen of the Woods",
+        "edible": "true",
+        "shape": "shelf",
+        "color": ["Brown"],
+        "cost": 0,
+        "description": "..."
+    },
+    {
+        "name": "Oysters",
+        "edible": "true",
+        "shape": "vase",
+        "color": ["Brown"],
+        "cost": 10,
+        "description": "..."
+    },
+    {
+        "name": "Puffballs",
+        "edible": "true",
+        "shape": "circular",
+        "color": ["White", "Yellow"],
+        "cost": 12,
+        "description": "..."
+    },
+    {
+        "name": "Truffles",
+        "edible": "true",
+        "shape": "circular",
+        "color": ["White", "Brown", "Yellow", "Black"],
+        "cost": 0,
+        "description": "..."
+    },    
+    {
+        "name": "Witch's Butter",
+        "edible": "true",
+        "shape": "jelly",
+        "color": ["Yellow"],
+        "cost": 100,
+        "description": "..."
+    },
+    {
+        "name": "Wood Ear",
+        "edible": "true",
+        "shape": "jelly",
+        "color": ["White", "Black"],
+        "cost": 0,
+        "description": "..."
+    }
+]
