@@ -1,7 +1,8 @@
 .block{
-    margin: 15px;
-    width: 250px;
-    background-color: lightblue;
+    margin: 10px;
+    width: 275px;
+    height: 220px;
+    background-color: #ccb491;
 }
 .info{
     padding:5px 15px 15px 15px;

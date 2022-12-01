@@ -1,26 +1,29 @@
 import './App.css';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import data from "./assets/data.json"
-import Item from "./components/GalleryItem.js"
-import CheckItem from "./components/CheckItem.js"
-import { unstable_renderSubtreeIntoContainer } from 'react-dom';
+import Item from "./components/GalleryItem.js";
+import CheckBox from './components/CheckBox.js';
+import Radio from './components/Radio.js'
 
 function App() {
-  const [showing, setShow] = useState([...data]);
+  // sort type 
+  const [sortType, setSortType] = useState("Name");
+
+  // aggregate stuff
   const [fav, setFav] = useState([]);
+  const [showFav, setShowFav] = useState(false);
   const [aggregate, setAggr] = useState(0);
-  const [colorFilters, setColors] = useState([]);
-  // const [edibleFilter, setEdible] = useState(false);
-  // const [favFilter, setFavFilter] = useState(false);
-  // useEffect(() => {
-  //     console.log(showing, colorFilters);
-  // }, [showing, colorFilters])
+
+  // filters
+  const [propFilter, setPropFilter] = useState([]);
+  const [typeFilter, setTypeFilter] = useState([]);
+  
 
   function favButton(item){
     if (fav.includes(item)){
-      return <button onClick={()=>removeFromFav(item)}>Remove From Favorites</button>
+      return <button onClick={()=>removeFromFav(item)}>Remove From References</button>;
     } else {
-      return <button onClick={()=>addToFav(item)}>Add To Favorites</button>
+      return <button onClick={()=>addToFav(item)}>Add To Refereces</button>;
     }
   }
 
@@ -34,86 +37,120 @@ function App() {
     setAggr(aggregate - item.cost);
   }
 
-
-  function sortByName(){
-    setShow([...showing].sort((a, b) => a.name.localeCompare(b.name)));
+  function selectSort(t) {
+  // const selectSortType = eventKey => {
+    setSortType(t);
   }
 
-  function sortByValue(){
-    setShow([...showing].sort((a,b)=> a.cost < b.cost? 1: -1));
-  }
-
-  function addColor(c){
-    setColors([...colorFilters, c]);
-  }
-
-  function removeColor(c){
-    setColors([...colorFilters].filter(f => f !== c))
-  }
-
-  function toggleColor(c){
-    if (colorFilters.includes(c)){
-      removeColor(c);
-    } else {
-      addColor(c);
+  function sortData() {
+    switch(sortType){
+      case "Name": return data.sort((a, b) => a.name.localeCompare(b.name));
+      case "Cost": return data.sort((a,b)=> a.cost > b.cost? 1: -1);
+      case "Rarity": return data.sort((a,b)=> a.rarity > b.rarity? 1: -1);
     }
-    {applyColorFilters()};
   }
-  
-  function applyColorFilters() {
-    // setShow([...unfilteredData]);
-    setShow([...data].filter(i => colorFilters.every(c => i.color.includes(c))));
+
+  function selectPropertyFilter(t) {
+  // const selectPropertyFilter = eventKey => {
+    if (!propFilter.includes(t)){
+      setPropFilter([...propFilter, t]);
+    } else {
+      setPropFilter([...propFilter].filter(i => i !== t));
+    }
+  }
+
+  const matchesPropertyFilter = item => {
+    if (propFilter.every(f => item.properties.includes(f))) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  function selectTypeFilter(t) {
+    if (!typeFilter.includes(t)){
+      setTypeFilter([...typeFilter, t]);
+    } else {
+      setTypeFilter([...typeFilter].filter(i => i !== t));
+    }
+  }
+
+  const matchesTypeFilter = item => {
+    if (typeFilter.includes(item.type)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  const filterData = list => {
+    if(typeFilter.length == 0) {
+      return list.filter(matchesPropertyFilter);
+    } else {
+      return list.filter(matchesPropertyFilter).filter(matchesTypeFilter);
+    }
+  }
+
+  function selectShowFav(){
+  // const selectShowFav = eventKey => {
+    setShowFav(!showFav);
+  }
+
+  const checkFavorites = list => {
+    if (showFav) {
+      return list.filter(i => fav.includes(i));
+    } else {
+      return list;
+    }
   }
 
   function reset(){
+    setSortType("Name");
+    setPropFilter([]);
+    setTypeFilter([]);
     setFav([]);
+    setShowFav(false);
     setAggr(0);
-    setShow([...data]);
     document.getElementById('side-bar-form').reset();
   }
-
   function display() {
-    return showing.map((item, index) => 
+    const sortedData = sortData();
+    const filteredData = filterData(sortedData);
+    const displayedData = checkFavorites(filteredData);
+    return displayedData.map((item, index) => 
       <Item key={index} item={item} addButton={favButton}/>
     )
   }
 
   return (
     <div className="App">
-      <h1> Mushroom Foraging Helper! </h1>
+      <h1> DnD Magic Items Reference Sorter </h1>
       <div className='main-grid'>
         {/* side menu */}
         <div className='side-bar'>
-          <form id="side-bar-form">
+        <form id="side-bar-form">
             <legend>Sort By</legend>
-              <div>
-                  <input type="radio" id="a1" name="Sort" onChange={sortByName} defaultChecked/>
-                  <label for="a1">Name</label><br/>
-              </div>
-              <div>
-                  <input type="radio" id="a2" name="Sort" onChange={sortByValue}/>
-                  <label for="a2">Market Value</label><br/>
-              </div>
-              {/* <RadioItem key="a1" value="Name" form="sortBy" toSort={sortByName}/>
-              <RadioItem key="a2" value="Market Value" form="sortBy" toSort={sortByValue}/> */}
+              <Radio key="a1" value="Name" form="sortBy" toSort={selectSort} d={true}/>
+              <Radio key="a2" value="Cost" form="sortBy" toSort={selectSort} d={false}/>
+              <Radio key="a3" value="Rarity" form="sortBy" toSort={selectSort} d={false}/>
             <br/>
-            <legend>Color</legend>
-              <CheckItem key="b1" value="Brown" form="color" toFilter={toggleColor}/>
-              <CheckItem key="b2" value="White" form="color" toFilter={toggleColor}/>
-              <CheckItem key="b3" value="Yellow" form="color" toFilter={toggleColor}/>
-              <CheckItem key="b4" value="Orange" form="color" toFilter={toggleColor}/>
-              <CheckItem key="b5" value="Black" form="color" toFilter={toggleColor}/>
-              <CheckItem key="b6" value="Red" form="color" toFilter={toggleColor}/>
+            <legend>Properties</legend>
+              <CheckBox key="b1" value="Healing" form="filter" toFilter={selectPropertyFilter}/>
+              <CheckBox key="b2" value="Utility" form="filter" toFilter={selectPropertyFilter}/>
+              <CheckBox key="b3" value="Consumable" form="filter" toFilter={selectPropertyFilter}/>
+              <CheckBox key="b4" value="Attunement" form="filter" toFilter={selectPropertyFilter}/>
             <br/>
-            {/* <legend>Is Edible</legend>
-              <CheckItem key="c1" value="Is Edible" form="canEat"/>
-            <br/> */}
+            <legend>Type</legend>
+              <CheckBox key="c1" value="Potion" form="filter2" toFilter={selectTypeFilter}/>
+              <CheckBox key="c2" value="Oil" form="filter2" toFilter={selectTypeFilter}/>
+              <CheckBox key="c3" value="Weapon" form="filter2" toFilter={selectTypeFilter}/>
+              <CheckBox key="c4" value="Magical Artifact" form="filter2" toFilter={selectTypeFilter}/>
+            <br/>
             <legend>Other</legend>
-              <CheckItem key="c1" value="Is Edible" form="canEat"/>
-              <CheckItem key="c2" value="Favorites" form="other"/>
+              <CheckBox key="c2" value="References" form="other" toFilter={selectShowFav}/>
           </form>
           <div>
-            <b>Coolness Points:</b> {aggregate}
+            <b>Total Cost:</b> {aggregate} gp
           </div>
           <br></br>
           <button onClick={()=>reset()}>Reset</button>

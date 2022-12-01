@@ -1,4 +1,4 @@
-export default function CheckItem(props) {
+export default function CheckBox(props) {
     return (
         <div>
             <input 

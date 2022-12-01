@@ -1,6 +1,6 @@
 .App {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   text-align: left;
 }
 .main-grid{
@@ -9,5 +9,9 @@
 }
 .gallery{
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap:wrap;
+  justify-content: left;
+}
+.side-bar-label:link{
+  color:red;
 }

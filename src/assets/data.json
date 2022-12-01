@@ -1,98 +1,122 @@
 [
     {
-        "name": "Autmn Skullcap",
-        "edible": "false",
-        "shape": "flat",
-        "color": ["Brown", "Orange"],
-        "cost": 0,
-        "description": "..."
-    },
-    {
-        "name": "Chanterelles",
-        "edible": "true",
-        "shape": "vase",
-        "color": ["Orange", "Yellow", "White"],
-        "cost": 20,
-        "description": "..."
-    },
-    {
-        "name": "Chicken of the Woods",
-        "edible": "true",
-        "shape": "shelf",
-        "color": ["Orange", "Yellow"],
-        "cost": 20,
-        "description": "..."
-    },
-    {
-        "name": "Death Caps",
-        "edible": "false",
-        "shape": "flat",
-        "color": ["Yellow","White"],
-        "cost": 0,
-        "description": "..."
-    },
-    {
-        "name": "Destroying Angel",
-        "edible": "false",
-        "shape": "convex",
-        "color": ["White"],
-        "cost": 0,
-        "description": "..."
-    },
-    {
-        "name": "Fly Agaric",
-        "edible": "false",
-        "shape": "convex",
-        "color": ["Red", "Orange"],
-        "cost": 0,
-        "description": "..."
-    },
-    {
-        "name": "Hen of the Woods",
-        "edible": "true",
-        "shape": "shelf",
-        "color": ["Brown"],
-        "cost": 0,
-        "description": "..."
-    },
-    {
-        "name": "Oysters",
-        "edible": "true",
-        "shape": "vase",
-        "color": ["Brown"],
-        "cost": 10,
-        "description": "..."
-    },
-    {
-        "name": "Puffballs",
-        "edible": "true",
-        "shape": "circular",
-        "color": ["White", "Yellow"],
-        "cost": 12,
-        "description": "..."
-    },
-    {
-        "name": "Truffles",
-        "edible": "true",
-        "shape": "circular",
-        "color": ["White", "Brown", "Yellow", "Black"],
-        "cost": 0,
+        "name": "Potion of Healing",
+        "properties": ["Healing", "Consumable"],
+        "type": "Potion",
+        "rarity": 0,
+        "cost": 10,        
         "description": "..."
     },    
     {
-        "name": "Witch's Butter",
-        "edible": "true",
-        "shape": "jelly",
-        "color": ["Yellow"],
+        "name": "Potion of Flying",
+        "properties": ["Utility", "Consumable"],
+        "type": "Potion",
+        "rarity": 3,
+        "cost": 30,
+        "description": "..."
+    },    
+    {
+        "name": "Potion of Invisibility",
+        "properties": ["Utility", "Consumable"],
+        "type": "Potion",
+        "rarity": 3,
+        "cost": 30,
+        "description": "..."
+    },    
+    {
+        "name": "Bottled Breath",
+        "properties": ["Utility", "Consumable"],
+        "type": "Potion",
+        "rarity": 1,
+        "cost": 20,
+        "description": "..."
+    },    
+    {
+        "name": "Potion of Climbing",
+        "properties": ["Utility", "Consumable"],
+        "type": "Potion",
+        "rarity": 0,
+        "cost": 20,
+        "description": "..."
+    },    
+    {
+        "name": "Potion of Fire Breathing",
+        "properties": ["Weapon", "Consumable"],
+        "type": "Potion",
+        "rarity": 1,
+        "cost": 50,
+        "description": "..."
+    },    
+    {
+        "name": "Oil of Slipperiness",
+        "properties": ["Utility", "Consumable"],
+        "type": "Oil",
+        "rarity": 1,
+        "cost": 5,
+        "description": "..."
+    },    
+    {
+        "name": "Elixir of Health",
+        "properties": ["Healing","Consumable"],
+        "type": "Potion",
+        "rarity": 2,
         "cost": 100,
+        "description": "..."
+    },    
+    {
+        "name": "Oil of Etherealness",
+        "properties": ["Utility"],
+        "type": "Oil",
+        "rarity": 2,
+        "cost": 50,
+        "description": "..."
+    },    
+    {
+        "name": "Scroll of Polymorph",
+        "properties": ["Utility", "Consumable"],
+        "type": "Magical Artifact",
+        "rarity": 3,
+        "cost": 200,
         "description": "..."
     },
     {
-        "name": "Wood Ear",
-        "edible": "true",
-        "shape": "jelly",
-        "color": ["White", "Black"],
-        "cost": 0,
+        "name": "Blade of Broken Mirrors",
+        "properties": ["Attunement"],
+        "type": "Weapon",
+        "rarity": 3,
+        "cost": 1270,
+        "description": "..."
+    },    
+    {
+        "name": "Broom of Flying",
+        "properties": ["Utility", "Attunement"],
+        "type": "Magical Artifact",
+        "rarity": 3,
+        "cost": 535,
+        "description": "..."
+    },    
+    {
+        "name": "Ring of Shooting Stars",
+        "properties": ["Utility", "Attunement"],
+        "type": "Magical Artifact",
+        "rarity": 4,
+        "cost": 100000,
+        "description": "..."
+    },    
+    {
+        "name": "Dagger of Healing",
+        "properties": ["Healing","Utility","Attunement"],
+        "type": "Weapon",
+        "rarity": 3,
+        "cost": 200,
+        "description": "..."
+    },    
+    {
+        "name": "Ring of Shooting Stars",
+        "properties": ["Attunement", "Consumable"],
+        "type": "Magical Artifact",
+        "rarity": 4,
+        "cost": 100000,
         "description": "..."
     }
 ]
