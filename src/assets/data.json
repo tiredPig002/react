@@ -1,6 +1,7 @@
 [
     {
         "name": "Potion of Healing",
+        "image": "images/Potion_of_Healing.jpg",
         "properties": ["Healing", "Consumable"],
         "type": "Potion",
         "rarity": 0,
@@ -9,6 +10,7 @@
     },    
     {
         "name": "Potion of Flying",
+        "image": "images/Potion_of_Flying.jpg",
         "properties": ["Utility", "Consumable"],
         "type": "Potion",
         "rarity": 3,
@@ -17,6 +19,7 @@
     },    
     {
         "name": "Potion of Invisibility",
+        "image": "images/Potion_of_Invisibility.jpg",
         "properties": ["Utility", "Consumable"],
         "type": "Potion",
         "rarity": 3,
@@ -25,6 +28,7 @@
     },    
     {
         "name": "Bottled Breath",
+        "image": "images/Bottled_Breath.jpg",
         "properties": ["Utility", "Consumable"],
         "type": "Potion",
         "rarity": 1,
@@ -33,6 +37,7 @@
     },    
     {
         "name": "Potion of Climbing",
+        "image": "images/Potion_of_Climbing.jpg",
         "properties": ["Utility", "Consumable"],
         "type": "Potion",
         "rarity": 0,
@@ -41,6 +46,7 @@
     },    
     {
         "name": "Potion of Fire Breathing",
+        "image": "images/Potion_of_Fire_Breathing.jpg",
         "properties": ["Weapon", "Consumable"],
         "type": "Potion",
         "rarity": 1,
@@ -49,6 +55,7 @@
     },    
     {
         "name": "Oil of Slipperiness",
+        "image": "images/Oil_of_Slipperiness.jpg",
         "properties": ["Utility", "Consumable"],
         "type": "Oil",
         "rarity": 1,
@@ -57,6 +64,7 @@
     },    
     {
         "name": "Elixir of Health",
+        "image": "images/Elixir_of_Health.jpg",
         "properties": ["Healing","Consumable"],
         "type": "Potion",
         "rarity": 2,
@@ -65,6 +73,7 @@
     },    
     {
         "name": "Oil of Etherealness",
+        "image": "images/Oil_of_Etherealness.jpg",
         "properties": ["Utility"],
         "type": "Oil",
         "rarity": 2,
@@ -73,6 +82,7 @@
     },    
     {
         "name": "Scroll of Polymorph",
+        "image": "images/Scroll_of_Polymorph.jpg",
         "properties": ["Utility", "Consumable"],
         "type": "Magical Artifact",
         "rarity": 3,
@@ -81,6 +91,7 @@
     },
     {
         "name": "Blade of Broken Mirrors",
+        "image": "images/Blade_of_Broken_Mirrors.jpg",
         "properties": ["Attunement"],
         "type": "Weapon",
         "rarity": 3,
@@ -89,6 +100,7 @@
     },    
     {
         "name": "Broom of Flying",
+        "image": "images/Broom_of_Flying.jpg",
         "properties": ["Utility", "Attunement"],
         "type": "Magical Artifact",
         "rarity": 3,
@@ -96,15 +108,17 @@
         "description": "..."
     },    
     {
-        "name": "Ring of Shooting Stars",
+        "name": "Ring of Spell Storing",
+        "image": "images/Ring_of_Spell_Storing.jpg",
         "properties": ["Utility", "Attunement"],
         "type": "Magical Artifact",
-        "rarity": 4,
-        "cost": 100000,
+        "rarity": 3,
+        "cost": 1000,
         "description": "..."
     },    
     {
         "name": "Dagger of Healing",
+        "image": "images/Dagger_of_Healing.jpg",
         "properties": ["Healing","Utility","Attunement"],
         "type": "Weapon",
         "rarity": 3,
@@ -113,6 +127,7 @@
     },    
     {
         "name": "Ring of Shooting Stars",
+        "image": "images/Ring_of_Shooting_Stars.jpg",
         "properties": ["Attunement", "Consumable"],
         "type": "Magical Artifact",
         "rarity": 4,

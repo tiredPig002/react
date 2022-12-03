@@ -147,7 +147,7 @@ function App() {
               <CheckBox key="c4" value="Magical Artifact" form="filter2" toFilter={selectTypeFilter}/>
             <br/>
             <legend>Other</legend>
-              <CheckBox key="c2" value="References" form="other" toFilter={selectShowFav}/>
+              <CheckBox key="d1" value="References" form="other" toFilter={selectShowFav}/>
           </form>
           <div>
             <b>Total Cost:</b> {aggregate} gp
