@@ -18,12 +18,14 @@ export default function Item(props) {
             <div className="info">
                 <div>
                     <h3>{props.item.name}</h3>
-                    Rarity: {RarityConverter(props.item.rarity)}<br/>
-                    Properties: {props.item.properties.join(", ")} <br/>
-                    Cost: {props.item.cost} gp<br/>
-                    {props.item.description}
+                    <b>Rarity:</b> {RarityConverter(props.item.rarity)}<br/>
+                    <b>Properties:</b> {props.item.properties.join(", ")} <br/>
+                    <b>Cost:</b> {props.item.cost} gp<br/>
+                    {/* {props.item.description} */}
                 </div>
-                {props.addButton(props.item)}
+                <div className='refbutton'>
+                    {props.addButton(props.item)}
+                </div>
             </div>
         </div>
     );

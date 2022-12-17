@@ -1,13 +1,37 @@
 .block{
     margin: 10px;
-    width: 285px;
-    height: 500px;
+    width: 250px;
+    /* height: 500px; */
+    height:fit-content;
     background-color: white;
+    border-style: solid;
+    border-color: white;
     border-radius: 15px;
+    padding: 5px;
+    box-shadow: 0 5px 15px black;
+}
+.block:hover{
+    border-color: #FFD700;
+    box-shadow: 0 5px 15px #FFD700;
+}
+h3 {
+    margin: 10px 0;
+    color: black;
+    font-size: 20px;
 }
 .image{
-    padding: 5px;
+    padding: 2px;
+}
+img {
+    width:100%;
 }
 .info{
-    padding:5px 15px 15px 15px;
+    padding: 0 15px 10px;
+    font-size: 14px;
+}
+.refbutton{
+    padding: 15px 0 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

@@ -21,9 +21,9 @@ function App() {
 
   function favButton(item){
     if (fav.includes(item)){
-      return <button onClick={()=>removeFromFav(item)}>Remove From References</button>;
+      return <button className={"rem"} onClick={()=>removeFromFav(item)}>Remove From References</button>;
     } else {
-      return <button onClick={()=>addToFav(item)}>Add To Refereces</button>;
+      return <button className={"add"} onClick={()=>addToFav(item)}>Add To Refereces</button>;
     }
   }
 
@@ -124,7 +124,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1> DnD Magic Items Reference Sorter </h1>
+      
       <div className='main-grid'>
         {/* side menu */}
         <div className='side-bar'>
@@ -158,6 +158,7 @@ function App() {
 
 
         {/* gallery */}
+        <h1> DnD Magic Items Reference Sorter </h1>
         <div className='gallery'>
           {display()}
         </div>
